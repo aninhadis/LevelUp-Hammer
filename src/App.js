@@ -7,7 +7,7 @@ import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
 import Header from './components/layout/Header.js';
 import About from  './components/pages/About.js';
-import Banner from './components/banner/Banner';
+import Oferta from './components/oferta/Oferta';
 
 class App extends React.Component{
   constructor(props){
@@ -67,9 +67,11 @@ class App extends React.Component{
           <Header />
           <Route path='/' render={props => (
             <React.Fragment>
-              <Banner/>
-              <AddTodo AddTodo={this.addTodo}/>
-              <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
+              <Oferta/>
+              
+                <AddTodo AddTodo={this.addTodo}/>
+                <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
+              
             </React.Fragment>
           )}/>
           <Route path="/about" component={About} />

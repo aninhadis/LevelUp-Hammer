@@ -1,0 +1,14 @@
+.Oferta {
+    color: black;
+}
+
+.Oferta .nome-produto {
+    font-size: 0.5em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.Oferta .card-img-top {
+    background-image: url('https://cdn.awsli.com.br/600x450/347/347499/produto/14807768/fa73f360d8.jpg');
+    background-size: cover;
+}
