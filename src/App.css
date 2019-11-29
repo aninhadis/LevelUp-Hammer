@@ -10,6 +10,31 @@
   margin-top: 120px;
 }
 
+.App .secao-leiloes {
+  width: 100%;
+}
+
+.App .container-destaque {
+  float: left;
+  width: 60%;
+}
+
+.App .container-novos-leiloes {
+  float: right;
+  width: 40%;
+}
+
+.App .container-produtos.produtos-novos div {
+  flex: 1;
+  width: 50%;
+}
+
+.container-produtos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* 
 div>h5,div>h1 {
   margin: 0 auto;

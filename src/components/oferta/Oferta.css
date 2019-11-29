@@ -12,3 +12,8 @@
     background-image: url('https://cdn.awsli.com.br/600x450/347/347499/produto/14807768/fa73f360d8.jpg');
     background-size: cover;
 }
+
+.Oferta .lance {
+    display: block;
+    text-align: right;
+}

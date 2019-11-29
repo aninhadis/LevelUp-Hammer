@@ -66,13 +66,29 @@ class App extends React.Component{
         <div className = "App" >
           <Header />
           <Route path='/' render={props => (
-            <React.Fragment>
-              <Oferta/>
-              
-                <AddTodo AddTodo={this.addTodo}/>
-                <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
-              
-            </React.Fragment>
+            <div className="container">
+              <section className="secao-leiloes">
+                <div className="container-destaque">
+                  <Oferta/>
+                </div>
+                <div className="container-novos-leiloes">
+                  <h2>Novos Leilões</h2>
+                  <div className="container-produtos produtos-novos">
+                    <div>100</div>
+                    <div>101</div>
+                    <div>102</div>
+                    <div>103</div>
+                  </div>
+                </div>
+              </section>
+              {/* <React.Fragment>
+                <Oferta/>
+                
+                  <AddTodo AddTodo={this.addTodo}/>
+                  <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
+                
+              </React.Fragment> */}
+            </div>
           )}/>
           <Route path="/about" component={About} />
         </div> 
