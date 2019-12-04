@@ -11,7 +11,7 @@ export class CategoriaPage extends Component {
 
 
     render() {
-        const produtos_item = store.getState().filter(produto => produto.id < 6);
+        const produtos_item = store.getState().filter(produto => produto.id < 20);
         const cards = produtos_item.map( produto => <ItemCategoria produto={produto}/> );
         // const cards = store.getState().map( produto => <ItemCategoria produto={produto}/> );
         

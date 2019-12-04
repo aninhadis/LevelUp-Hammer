@@ -9,7 +9,7 @@ function Header(){
     <header className="Header">
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" role="navigation">
             <div className="container">
-                <a><img src="img/logo.jpg" width="100" alt="Logo"/></a>
+                <Link to="/"><img src="img/logo.jpg" width="100" alt="Logo"/></Link>
                 <div className="pesquisa">
                     <div className="form-group has-search">
                         <span className="fa fa-search form-control-feedback"></span>

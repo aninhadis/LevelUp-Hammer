@@ -10,6 +10,7 @@ import CategoriaPage from './pages/CategoriaPage';
 
 import { store, add_data } from "./store";
 import DescricaoPage from './pages/DescricaoPage';
+import HomePage from './pages/HomePage';
 
 
 
@@ -52,6 +53,7 @@ class App extends React.Component{
           
           {/* <Route path="/about" component={About} /> */}
           <Route path="/category" component={CategoriaPage} />
+          <Route exact={true} path="/" component={HomePage} />
           <Route path="/description" component={DescricaoPage} />
           {/* <Route path="/description" render={props =>(<CategoriaPage  produtos={this.state.produtos}/>)}/> */}
           {/* <Route path="/category" component={t1} /> */}

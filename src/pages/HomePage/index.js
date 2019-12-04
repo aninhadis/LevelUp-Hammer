@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Oferta from '../../components/oferta/Oferta'
 import {store} from '../../store';
 
 
@@ -10,10 +11,6 @@ export class HomePage extends Component {
 
         return (
             <React.Fragment>
-
-
-
-                {/* <Route path='/' exact="true" render={props => (
             <div className="container">
               <section className="secao-leiloes">
                 <div className="container-destaque">
@@ -31,13 +28,8 @@ export class HomePage extends Component {
               </section>
               <React.Fragment>
                 <Oferta/>
-                
-                  <AddTodo AddTodo={this.addTodo}/>
-                  <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
-                
               </React.Fragment>
             </div>
-          )}/> */}
 
 
 

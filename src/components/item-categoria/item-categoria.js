@@ -29,6 +29,7 @@ const ItemCategoria = (props) => {
 
                     <CardTitle>{name}</CardTitle>
                     <CardSubtitle>Lance atual: {price}</CardSubtitle>
+                    <CardSubtitle>Categoria: {category}</CardSubtitle>
                     <CardSubtitle>Moeda: {currency}</CardSubtitle>
                     <CardSubtitle>Cor: {color}</CardSubtitle>
                     <Link to="/description" onClick={chamaDescricao} className="stretched-link"></Link>
