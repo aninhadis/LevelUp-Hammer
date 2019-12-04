@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Nav, NavItem, NavLink, Collapse } from 'reactstrap';
+import './sidebar.css';
+
 
 
 const SidebarItem = (props) => {
@@ -9,7 +11,7 @@ const SidebarItem = (props) => {
     const { title, itens } = props.item;
     const { navItem, navLink } = props.variations
 
-    const subitens = itens.map(item => <p>{item}</p> );
+    const subitens = itens.map(item => <NavItem style={{paddingLeft:'25px'}}>{item}</NavItem> );
 
     return (
         <div>

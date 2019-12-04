@@ -3,11 +3,11 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 // import uuid from 'uuid';
-import Header from './components/layout/Header.js';
+// import Header from './components/layout/Header.js';
 // import About from  './components/pages/About.js';
 // import Oferta from './components/oferta/Oferta';
 import CategoriaPage from './pages/CategoriaPage';
-
+import Header from './components/header'
 import { store, add_data } from "./store";
 import DescricaoPage from './pages/DescricaoPage';
 import HomePage from './pages/HomePage';
@@ -20,7 +20,8 @@ class App extends React.Component{
     super(props);
     this.state= {
       produtos:[],//Lista de produtos que irei salvar ao carregar a página
-      produto: {}
+      produto: {},
+      isLoading: true
     };  
   }
 
@@ -39,12 +40,21 @@ class App extends React.Component{
         type: add_data,
         produtos: data[0]
       });
+      this.setState({
+        isLoading: false
+      });
     });
   }
 
   
   render(){
-
+    if(this.state.isLoading){
+      return(
+        <div>
+          <h1>Carregando...</h1>
+        </div>
+      );
+    }
     return (
       
       <Router>

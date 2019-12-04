@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {descricaoStore} from '../../store';
+import './descricao.css'
 
 
 
@@ -8,13 +9,15 @@ class DescricaoPage extends Component {
     render() {
 
         const {brand, category, color, currency, image, name, price, comments} = descricaoStore.getState();
+
+
         console.log(descricaoStore.getState());
 
         return (
 
 
             <React.Fragment>
-                <div className="produto">
+                <div id="batata" className="produto">
                     <h1>{name}</h1>
                     <img src={image}/>
                     <h2>Valor atual: {price}</h2>

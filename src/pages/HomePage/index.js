@@ -7,6 +7,8 @@ import {store} from '../../store';
 export class HomePage extends Component {
 
 
+
+
     render() {
 
         return (
