@@ -3,6 +3,7 @@ import { Card, Button, CardImg, CardTitle, CardText, CardSubtitle, CardBody, Col
 import StarRatingComponent from 'react-star-rating-component';
 import {Link} from 'react-router-dom';
 import { descricaoStore, add_produto } from "../../store";
+import './item-categoria.css'
 
 
 const ItemCategoria = (props) => {
@@ -22,7 +23,7 @@ const ItemCategoria = (props) => {
 
     return (
         <Col xl="3">
-            <Card className>
+            <Card className='card-css'>
                 <CardImg top width="100%" src={image} alt="Card image cap" />
                 <CardBody>
                     <StarRatingComponent starCount={5} value={rating/comments.length}/>
