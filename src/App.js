@@ -2,99 +2,68 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import Todo from './components/Todo.js';
-import AddTodo from './components/AddTodo';
-import uuid from 'uuid';
+// import uuid from 'uuid';
 import Header from './components/layout/Header.js';
-import About from  './components/pages/About.js';
-import Oferta from './components/oferta/Oferta';
+// import About from  './components/pages/About.js';
+// import Oferta from './components/oferta/Oferta';
+import CategoriaPage from './pages/CategoriaPage';
+
+import { store, add_data } from "./store";
+import DescricaoPage from './pages/DescricaoPage';
+
+
 
 class App extends React.Component{
+  
   constructor(props){
     super(props);
     this.state= {
-      tarefas:[
-
-        // {
-        //   id: uuid.v4(),
-        //   title: "tarefa 1",
-        //   completed: false
-        // }
-      ]
+      produtos:[],//Lista de produtos que irei salvar ao carregar a página
+      produto: {}
     };  
-  }
-  markComplete = (id) => {
-    this.setState({
-      tarefas: this.state.tarefas.map( itemTarefa => {
-        if (itemTarefa.id == id){
-          itemTarefa.completed = !itemTarefa.completed;
-        }
-        return itemTarefa;
-      })
-    })
-  }
-  removeTodo = (id) => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-    .then(resposta => {
-      this.setState({
-        tarefas: [...this.state.tarefas.filter(
-          tarefas => tarefas.id !== id
-        )]
-      })
-    })
-
-  }
-
-  addTodo = (title) => {
-    axios.post('https://jsonplaceholder.typicode.com/posts', {title: title, complete: false})
-    .then(resposta => {
-      this.setState({tarefas: [...this.state.tarefas, resposta.data]})
-    })    
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=4')
-    .then(resposta => {
-      console.log(resposta.data);
-      this.setState({tarefas: resposta.data})
-    })
+    store.subscribe(()=>{
+      this.setState({
+        produtos: store.getState()
+      });
+    });
+    axios.get('https://cors-anywhere.herokuapp.com/https://funil-mock.herokuapp.com/').then(resposta => {
+      var data = Object.keys(resposta.data).map(function(key){
+        return resposta.data[key];
+      })
+      //this.setState({produtos: data[0]});
+      store.dispatch({
+        type: add_data,
+        produtos: data[0]
+      });
+    });
   }
 
+  
   render(){
+
     return (
+      
       <Router>
         <div className = "App" >
           <Header />
-          <Route path='/' render={props => (
-            <div className="container">
-              <section className="secao-leiloes">
-                <div className="container-destaque">
-                  <Oferta/>
-                </div>
-                <div className="container-novos-leiloes">
-                  <h2>Novos Leilões</h2>
-                  <div className="container-produtos produtos-novos">
-                    <div>100</div>
-                    <div>101</div>
-                    <div>102</div>
-                    <div>103</div>
-                  </div>
-                </div>
-              </section>
-              {/* <React.Fragment>
-                <Oferta/>
-                
-                  <AddTodo AddTodo={this.addTodo}/>
-                  <Todo removeTodo={this.removeTodo} tarefas={this.state.tarefas} markComplete={this.markComplete}/>
-                
-              </React.Fragment> */}
-            </div>
-          )}/>
-          <Route path="/about" component={About} />
+          
+          {/* <Route path="/about" component={About} /> */}
+          <Route path="/category" component={CategoriaPage} />
+          <Route path="/description" component={DescricaoPage} />
+          {/* <Route path="/description" render={props =>(<CategoriaPage  produtos={this.state.produtos}/>)}/> */}
+          {/* <Route path="/category" component={t1} /> */}
         </div> 
       </Router>
     );  
   }
+
+
+  
 }
+
+
 
 export default App;

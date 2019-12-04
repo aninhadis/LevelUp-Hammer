@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
+
+
 import './Header.css'
 
 function Header(){
@@ -14,10 +16,9 @@ function Header(){
                         <input type="text" className="form-control" placeholder="Search"></input>
                     </div>
                 </div>
-                {/* <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                     &#9776;
                 </button>
-                /class="collapse navbar-collapse" id="exCollapsingNavbar" */}
                 <div >
                     <ul className="nav navbar-nav flex-row justify-content-end ml-auto">
                         <li className="dropdown order-1">
@@ -44,6 +45,7 @@ function Header(){
                     </ul>
                     <ul className="nav navbar-nav">
                         {/* <Link to="/">Home</Link> */}
+                        <li className="nav-item item"><Link to="/category" className="nav-link">categoria</Link></li>
                         <li className="nav-item item"><a href="#" className="nav-link">Leiloar</a></li>
                         <li className="nav-item item"><a href="#" className="nav-link">Quem Somos</a></li>
                     </ul>
