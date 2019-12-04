@@ -1,9 +1,23 @@
 .produto{
-    text-align: center;
+    border: 2px solid #333333;
+    background-color: #ebebeb;
 }
 
 
-#batata{
-    background-color: crimson;
+#name-item{
+    
+    margin: 20px;
+}
 
+#image-item{
+    margin-bottom:20px;
+    max-width: 400px;
+    max-height: 300px;
+}
+#align-col1{
+    text-align: center;
+}
+#align-col2{
+    text-align: left;
+    margin-top: 100px;
 }
