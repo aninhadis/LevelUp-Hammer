@@ -8,7 +8,7 @@ import './item-categoria.css'
 
 const ItemCategoria = (props) => {
 
-    const {brand, category, color, currency, image, name, price, comments} = props.produto;
+    const {brand, category, color, currency, image, name, price, comments,id} = props.produto;
     var rating = 0;
     comments.forEach(comentario => {
         rating = rating + comentario.rating;
@@ -24,7 +24,7 @@ const ItemCategoria = (props) => {
     return (
         <Col xl="3">
             <Card className='card-css'>
-                <CardImg top width="100%" src={image} alt="Card image cap" />
+                <CardImg top width="100%" src={image+'?'+id} alt="Card image cap" />
                 <CardBody>
                     <StarRatingComponent starCount={5} value={rating/comments.length}/>
 

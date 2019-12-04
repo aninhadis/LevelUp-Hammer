@@ -17,6 +17,7 @@ import {
 import {Link} from 'react-router-dom';
 import ItemToggle from '../item-toggle';
 import LoginItem from './login-item';
+import ItemDropdown from '../item-toggle/item-dropdown';
 import './header.css';
 
 
@@ -31,7 +32,7 @@ const Header = (props) => {
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                             </NavItem>
-                        </Nav>);
+                        </Nav>);                
 
   return (
       <Navbar color="light" style={{width:'100%'}} light expand="md">
@@ -40,6 +41,9 @@ const Header = (props) => {
                 <Link to="/"><img src="img/logo.jpg" width="100" alt="Logo"/></Link>
               </Col>
               <Col>
+                <ItemDropdown components={componentes}/>
+              </Col>
+              <Col xl="4">
                 <Row className="pesquisa form-group has-search">
                     <Col>
                         <input type="text" className="form-control" placeholder="Search"></input>
@@ -51,7 +55,7 @@ const Header = (props) => {
               </Col>
 
               <ItemToggle components={componentes}/>
-              <Link to="/category" className="nav-link">categoria</Link>
+              <Link to="/category">categoria</Link>
 
                 {/* <li className="nav-item item"><a href="#" className="nav-link">Leiloar</a></li>
                 <li className="nav-item item"><a href="#" className="nav-link">Quem Somos</a></li> */}

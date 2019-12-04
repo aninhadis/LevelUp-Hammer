@@ -1,9 +1,32 @@
 .produto{
-    text-align: center;
+    border: 2px solid #333333;
+    background-color: #ebebeb;
+}
+#name-item{
+    
+    margin: 20px;
 }
 
+#image-item{
+    border: 2px solid #333333;
+    margin-bottom:20px;
+    max-width: 400px;
+    max-height: 300px;
+}
+#align-col1{
+    text-align: center;
+}
+#align-col2{
+    text-align: left;
+    margin-top: 100px;
+}
+#lance-button{
+    border: 2px solid #333333;
+    margin: 10px;
+    background-color: #cecece;
+}
 
-#batata{
-    background-color: crimson;
-
+#lance-button:hover{
+    background-color: #333333;
+    color: white;
 }

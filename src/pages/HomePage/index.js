@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Oferta from '../../components/oferta/Oferta'
 import {store} from '../../store';
+import './homepage.css'
 
 
 
