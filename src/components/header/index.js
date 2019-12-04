@@ -16,6 +16,8 @@ import {
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import ItemToggle from '../item-toggle';
+import LoginItem from './login-item';
+import './header.css';
 
 
 const Header = (props) => {
@@ -24,7 +26,7 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   const componentes = (<Nav navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                                {/* <Link href="/components/">Components</Link> */}
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
@@ -32,20 +34,42 @@ const Header = (props) => {
                         </Nav>);
 
   return (
-    <Row>
-      <Navbar color="light" light expand="md">
-        <Link to="/"><img src="img/logo.jpg" width="100" alt="Logo"/></Link>
+      <Navbar color="light" style={{width:'100%'}} light expand="md">
+          <Row>
+              <Col>
+                <Link to="/"><img src="img/logo.jpg" width="100" alt="Logo"/></Link>
+              </Col>
+              <Col>
+                <Row className="pesquisa form-group has-search">
+                    <Col>
+                        <input type="text" className="form-control" placeholder="Search"></input>
+                    </Col>
+                    <Col>
+                        <span className="fa fa-search form-control-feedback"></span>
+                    </Col>
+                </Row>
+              </Col>
 
-        <Row className="pesquisa form-group has-search">
+              <ItemToggle components={componentes}/>
+              <Link to="/category" className="nav-link">categoria</Link>
+
+                {/* <li className="nav-item item"><a href="#" className="nav-link">Leiloar</a></li>
+                <li className="nav-item item"><a href="#" className="nav-link">Quem Somos</a></li> */}
+                
+
+              <LoginItem/>
+          </Row>
+
+        {/* 
             <Col>
-                <input type="text" className="form-control" placeholder="Search"></input>
+                
             </Col>
             <Col>
-                <span className="fa fa-search form-control-feedback"></span>
+                
             </Col>
-        </Row>
+        </Row> */}
 
-        <ItemToggle components={componentes}/>
+        
 
 
 
@@ -80,7 +104,6 @@ const Header = (props) => {
           </Nav>
         </Collapse> */}
       </Navbar>
-    </Row>
   );
 }
 
