@@ -29,6 +29,8 @@ class DescricaoPage extends Component {
                     <h2>Cor: {color}</h2>
                     <h2>Marca: {brand}</h2>
                     <h2>Categoria: {category}</h2>
+                    <button id="lance-button">Dê seu Lance</button>
+                    <button id="lance-button">Aumente seu Lance</button>
                     </Col>
                 </Row>
                 <div className="comentario">

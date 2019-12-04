@@ -34,7 +34,7 @@ const Header = (props) => {
   return (
     <Row>
       <Navbar color="light" light expand="md">
-        <Link to="/"><img src="img/HammerLogo.jpg" width="100" alt="Logo"/></Link>
+        <Link to="/"><img src="img/HammerLogo.png" width="100" alt="Logo"/></Link>
 
         <Row className="pesquisa form-group has-search">
             <Col>
