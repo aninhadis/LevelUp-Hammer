@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, CardImg, CardTitle, CardSubtitle, CardBody, Col} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { descricaoStore, add_produto } from "../../store";
-
+import './item-menu.css';
 
 const ItemMenuNovo = (props) => {
 
@@ -17,7 +17,7 @@ const ItemMenuNovo = (props) => {
    
     return (
         <Col xl='4'>
-            <Card>
+            <Card body outline color="danger">
                 <CardImg top width="100%" src={image+'?'+id} alt="Card image cap" />
                     <CardBody>
                         <CardTitle>{name}</CardTitle>
