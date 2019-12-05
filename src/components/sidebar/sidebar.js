@@ -8,9 +8,15 @@ const Sidebar = (props) => {
     const toggle = () => setIsXOpen(!isOpen);
 
     const item = [
-        {id: 1, title: 'categoria1', itens: ['item1', 'item2', 'item3']},
+        {id: 1, title: 'cor', itens: [ 'aliceblue','antiquewhite','aqua','aquamarine','azure','beige','bisque']},
         {id: 2, title: 'categoria2', itens: ['item1', 'item2', 'item3']},
-        {id: 3, title: 'categoria3', itens: ['item1', 'item2', 'item3']}
+        {id: 3, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
+        {id: 4, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
+        {id: 5, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
+        {id: 6, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
+        {id: 7, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
+        {id: 8, title: 'categoria3', itens: ['item1', 'item2', 'item3']}
+
     ];
 
     const navStyles = {

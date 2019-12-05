@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Oferta from '../../components/oferta/Oferta'
 import {store} from '../../store';
 import './homepage.css'
+import { CardDeck, Row, Col} from 'reactstrap';
+import ItemMenuNovo from '../../components/item-menu/item-menu-novos';
+import logo from '../../assets/logo.png';
+import ItemMenuOferta from '../../components/item-menu/item-menu-oferta';
 
 
 
@@ -9,12 +13,32 @@ export class HomePage extends Component {
 
 
 
-
     render() {
 
+      const cardsNovos = store.getState().slice(0,6).map( produto => <ItemMenuNovo produto={produto}/> );
+      const cardOferta = store.getState().slice(50,51).map( produto => <ItemMenuOferta produto={produto}/> );
+
         return (
+
+          
             <React.Fragment>
-            <div className="container">
+
+          <Row>
+            <Col xl='7'>
+              {cardOferta}
+            </Col>
+            <Col xl='5'>
+              <CardDeck>
+                {cardsNovos}
+              </CardDeck>
+              
+            </Col>
+          </Row>
+          <h1>Próximo passo</h1>
+              
+              
+
+            {/* <div className="container">
               <section className="secao-leiloes">
                 <div className="container-destaque">
                   <Oferta/>
@@ -32,7 +56,7 @@ export class HomePage extends Component {
               <React.Fragment>
                 <Oferta/>
               </React.Fragment>
-            </div>
+            </div> */}
 
 
 

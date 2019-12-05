@@ -2,6 +2,12 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+
+import { Spinner, Col } from 'reactstrap';
+import logo from './assets/logo.png';
+
+
+
 // import uuid from 'uuid';
 // import Header from './components/layout/Header.js';
 // import About from  './components/pages/About.js';
@@ -50,9 +56,13 @@ class App extends React.Component{
   render(){
     if(this.state.isLoading){
       return(
-        <div>
-          <h1>Carregando...</h1>
+        <div className="carregando">
+          <h1>Espere, estamos atualizando nossos dados...</h1>
+          <Spinner id="spinner" color="success" />
+          <img id="imagem_carregando"src={logo} width="100" alt="Logo"/>
+          
         </div>
+        
       );
     }
     return (
