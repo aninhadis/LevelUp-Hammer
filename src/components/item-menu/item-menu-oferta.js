@@ -23,7 +23,7 @@ const ItemMenuOferta = (props) => {
                     <CardBody>
                         <Row>
                             <CardTitle id="oferta-name">{name}</CardTitle>
-                            <CardTitle id="oferta-price">{price}</CardTitle>
+                            <CardTitle id="oferta-price">Lance atual: {price}</CardTitle>
                             <Button id="oferta-button">Dê seu lance</Button>          
                         </Row>
                         

@@ -30,12 +30,8 @@ class DescricaoPage extends Component {
                     <h2><span className="orange-text">Marca:</span> {brand}</h2>
                     <h2><span className="orange-text">Categoria:</span> {category}</h2>
                     <button id="lance-button">Dê seu Lance</button>
-                    <button id="lance-button">Aumentar Lance</button>
                     </Col>
                 </Row>
-                <div className="comentario" style={{background:"#6d6d6d", color: "#FAFBF9"}}>
-                    <h1 style={{marginBottom: "0"}}>Comentários:</h1>
-                </div>
                 
 
             </React.Fragment>

@@ -17,6 +17,8 @@ import Header from './components/header'
 import { store, add_data } from "./store";
 import DescricaoPage from './pages/DescricaoPage';
 import HomePage from './pages/HomePage';
+import CadastroPage from './pages/CadastroPage';
+import Footer from './components/footer/footer';
 
 
 
@@ -75,8 +77,11 @@ class App extends React.Component{
           <Route path="/category" component={CategoriaPage} />
           <Route exact={true} path="/" component={HomePage} />
           <Route path="/description" component={DescricaoPage} />
+          <Route path="/register" component={CadastroPage} />
           {/* <Route path="/description" render={props =>(<CategoriaPage  produtos={this.state.produtos}/>)}/> */}
           {/* <Route path="/category" component={t1} /> */}
+
+          <Footer/>
         </div> 
       </Router>
     );  
