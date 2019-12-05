@@ -4,6 +4,7 @@ import { Container, Row, Col, CardDeck } from 'reactstrap';
 
 import ItemCategoria from '../../components/item-categoria/item-categoria';
 import {store} from '../../store';
+import './categoria.css';
 
 
 
@@ -19,14 +20,14 @@ export class CategoriaPage extends Component {
         return (
             <React.Fragment>
                 
-                <Container fluid={true}>
+                <Container className="background-cards" fluid={true}>
                     <Row>
                         <Col xl="2">
                             <Sidebar/>
                         </Col>
                         {/* {produtos} */}
                         <Col xl="10">
-                            <CardDeck>
+                            <CardDeck >
                                 {cards}
                             </CardDeck>
                         </Col>

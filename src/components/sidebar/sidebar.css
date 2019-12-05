@@ -1,5 +1,5 @@
 .category-bar{
-    background-color: #c7c4bd;
+    background-color: var(--color-primary-gray);
     height: 100%;
     margin-left: 0;
 }
