@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+    InputGroup, InputGroupAddon, Button, Input,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -19,94 +20,83 @@ import ItemToggle from '../item-toggle';
 import LoginItem from './login-item';
 import ItemDropdown from '../item-toggle/item-dropdown';
 import './header.css';
+import logo from '../../assets/logo.png';
 
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+
+
   const componentes = (<Nav navbar>
-                            <NavItem>
-                                {/* <Link href="/components/">Components</Link> */}
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                            </NavItem>
-                        </Nav>);                
+                            {/* <Col xl="1"> */}
+                            <Row xl='12'>
+                                {/* <Row> */}
+                                    <Link to="/category">Categoria</Link>
+                                    {/* <Col xl="1"> */}
+                                        <Link to="/category">Leiloar</Link>
+                                    {/* </Col> */}
+                                    {/* <Col xl="1"> */}
+                                        <Link to="/category">Quem Somos</Link>
+                                    {/* </Col> */}
+                                {/* </Row> */}
+
+                                <LoginItem/>
+
+                            </Row>
+                
+              {/* </Col> */}
+
+
+                               
+
+//                         </Nav>);                
 
   return (
-      <Navbar color="light" style={{width:'100%'}} light expand="md">
-          <Row>
-              <Col>
-                <Link to="/"><img src="img/logo.jpg" width="100" alt="Logo"/></Link>
-              </Col>
-              <Col>
+      <Navbar color="light" className="topbar" light expand="md" style={{flexWrap:'initial', display:'flex'}}>
+                <Link to="/"><img src={logo} className="ImgLogo" width="100" alt="Logo"/></Link>
+
                 <ItemDropdown components={componentes}/>
-              </Col>
+
+                <Col xl="4">
+                    <InputGroup>
+                            <Input placeholder="Digite o nome do produto" />
+                            <InputGroupAddon addonType="append">
+                            <Button><span className="fa fa-search form-control-feedback"></span></Button>
+                        </InputGroupAddon>
+                    </InputGroup>
+                </Col>
+
+                <Col style={{justifyContent: 'end'}}>
+                    <Row>
+                        <Link className="item_topbar"to="/category">Categoria</Link>
+                        <LoginItem/>
+                    </Row>
+                    <Row>
+                        <Link className="item_topbar"to="/category">Leiloar</Link>
+                        <Link className="item_topbar"to="/category">Quem Somos?</Link>
+                    </Row>
+                </Col>
+                
+
+                {/* <Col xl='1'>
+                
+
+                </Col>
+
               <Col xl="4">
-                <Row className="pesquisa form-group has-search">
-                    <Col>
-                        <input type="text" className="form-control" placeholder="Search"></input>
-                    </Col>
-                    <Col>
-                        <span className="fa fa-search form-control-feedback"></span>
-                    </Col>
-                </Row>
+                  <Row>
+                  <input type="text" className="form-control texto-pesquisa" placeholder="Digite o nome do produto"></input>
+                  </Row>
               </Col>
 
-              <ItemToggle components={componentes}/>
-              <Link to="/category">categoria</Link>
+              <Col xl='6'>
+                <ItemToggle components={componentes}/>
+              </Col> */}
 
-                {/* <li className="nav-item item"><a href="#" className="nav-link">Leiloar</a></li>
-                <li className="nav-item item"><a href="#" className="nav-link">Quem Somos</a></li> */}
-                
-
-              <LoginItem/>
-          </Row>
-
-        {/* 
-            <Col>
-                
-            </Col>
-            <Col>
-                
-            </Col>
-        </Row> */}
-
-        
-
-
-
-
-        {/* <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-        </Collapse> */}
+              
       </Navbar>
   );
 }

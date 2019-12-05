@@ -1,7 +1,20 @@
-Link{
-    all: 'unset';
+.navbar{
+    justify-content: flex-start;
 }
-/* .ItemHeader{
-    all: 'none';
-    color: red;
-} */
+
+.ImgLogo{
+    height: 150px;
+    width: 150px;
+}
+
+Link{
+    color: turquoise;
+}
+
+.item_topbar{
+    margin-left: 20px;
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+    justify-content: end;
+}
