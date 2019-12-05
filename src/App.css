@@ -9,6 +9,25 @@
   color: white; */
   /* margin-top: 120px;  */
 } 
+:root {
+  --color-primary-orange: #ff6f00;
+  --color-light-orange: #ffa040;
+  --color-dark-orange: #c43e00;
+  --color-primary-gray: #424242;
+  --color-light-gray: #6d6d6d;
+  --color-dark-gray: #1b1b1b;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/montserrat/Montserrat-Regular.ttf);
+}
+html, body{
+  font-family: "Montserrat" !important;
+  overflow-x: hidden;
+  background-color: var(--color-pattern-blue);
+}
 
 .App .secao-leiloes {
   width: 100%;

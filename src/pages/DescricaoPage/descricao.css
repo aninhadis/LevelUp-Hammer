@@ -1,6 +1,6 @@
 .produto{
     border: 2px solid #333333;
-    background-color: #ebebeb;
+    background-color: var(--color-light-orange);
 }
 #name-item{
     
@@ -8,7 +8,7 @@
 }
 
 #image-item{
-    border: 2px solid #333333;
+    border: 2px solid var(--color-dark-gray);
     margin-bottom:20px;
     max-width: 400px;
     max-height: 300px;
@@ -17,16 +17,19 @@
     text-align: center;
 }
 #align-col2{
+    
     text-align: left;
-    margin-top: 100px;
 }
 #lance-button{
-    border: 2px solid #333333;
+    border: 2px solid var(--color-dark-gray);
     margin: 10px;
-    background-color: #cecece;
+    background-color: var(--color-primary-orange);
+    width: 100px;
+    padding: 0px 16px;
+    box-sizing: content-box;
 }
 
 #lance-button:hover{
-    background-color: #333333;
-    color: white;
+    background-color: var(--color-light-gray);
+    color: var(--color-light-orange);
 }

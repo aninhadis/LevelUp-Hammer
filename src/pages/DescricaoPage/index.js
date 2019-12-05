@@ -18,23 +18,23 @@ class DescricaoPage extends Component {
 
 
             <React.Fragment>
-                <Row className="produto">
-                    <Col id="align-col1" xl='6'>
+                <Row  style={{alignItems: "center", justifyContent: "center"}} className="produto">
+                    <Col id="align-col1" xl='7'>
                     <h1 id="name-item">{name}</h1>
                     <img id="image-item" src={image}/>
                     </Col>
-                    <Col id="align-col2" xl='6'>
+                    <Col id="align-col2" xl='5'>
                     <h2>Valor atual: {price}</h2>
                     <h2>Moeda: {currency}</h2>
                     <h2>Cor: {color}</h2>
                     <h2>Marca: {brand}</h2>
                     <h2>Categoria: {category}</h2>
                     <button id="lance-button">Dê seu Lance</button>
-                    <button id="lance-button">Aumente seu Lance</button>
+                    <button id="lance-button">Aumentar Lance</button>
                     </Col>
                 </Row>
-                <div className="comentario">
-                    <h1>Comentários:</h1>
+                <div className="comentario" style={{background:"#6d6d6d", color: "#FAFBF9"}}>
+                    <h1 style={{marginBottom: "0"}}>Comentários:</h1>
                 </div>
                 
 
