@@ -23,10 +23,10 @@ const ItemCategoria = (props) => {
     }
 
     return (
-        // image+'?'+id
+        // 
         <Col xl="3">
             <Card className='card-css'>
-                <CardImg className="card-img" top width="100%" src={noImage} alt="Card image cap" />
+                <CardImg className="card-img" top width="100%" src={image+'?'+id} alt="Card image cap" />
                 <CardBody>
                     <StarRatingComponent starCount={5} value={rating/comments.length}/>
 
