@@ -1,9 +1,25 @@
+
+#leilao{
+    text-align: left;
+    align-items: center ;
+    background-color:#ffecdd;
+}
 #imagem-menu-oferta{
     max-width: 700px;
     max-height: 600px;
 }
-
-#leilao{
-    text-align: center;
+#oferta-name{
+    margin-right: 200px;
+}
+#oferta-price{
     align-items: center;
+}
+#oferta-button{
+    width: 100%;
+    border-radius: 15px;
+    border-width: 1.5px;
+    background-color:#fddec6;
+    color: black;
+    border-color:#ff6e40;
+    font-weight: bolder;
 }
