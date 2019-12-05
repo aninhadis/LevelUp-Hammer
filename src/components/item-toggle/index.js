@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, NavbarToggler, Nav } from 'reactstrap';
+import { Collapse, NavbarToggler, Nav, Row } from 'reactstrap';
 
 const ItemToggle = (props) => {
     const [collapsed, setCollapsed] = useState(true);
@@ -7,14 +7,9 @@ const ItemToggle = (props) => {
     const components = props.components;
   
     return (
-      <div>
-          <NavbarToggler onClick={toggle} className="mr-2" />
-          <Collapse isOpen={!collapsed} navbar>
-            <Nav navbar>
-              {components}
-            </Nav>
-          </Collapse>
-      </div>
+      <Row>
+          
+      </Row>
     );
   }
   

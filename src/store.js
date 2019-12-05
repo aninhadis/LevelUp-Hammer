@@ -15,13 +15,25 @@ function descricao(state = [], action = {}) {
         case add_produto:
             return action.produto;
         default:
-            return state
+            return state;
+    }
+}
+
+function categoria(state = [], action ={}){
+    switch (action.type) {
+        case add_categoria:
+            return {busca: action.busca, item: action.item};
+        default:
+            return state;
     }
 }
 
 export const add_data = 'ADD_DATA';
 export const add_produto = 'PRODUTO';
+export const add_categoria = 'CATEGORIA';
+
 export const store = createStore(data);
 export const descricaoStore = createStore(descricao);
+export const categoriaStore = createStore(categoria);
 
 

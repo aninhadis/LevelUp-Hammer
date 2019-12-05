@@ -3,6 +3,7 @@ import {
     InputGroup, InputGroupAddon, Button, Input,
   Collapse,
   Navbar,
+  Container,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -24,78 +25,41 @@ import logo from '../../assets/logo.png';
 
 
 const Header = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
-
-
-  const componentes = (<Nav navbar>
-                            {/* <Col xl="1"> */}
-                            <Row xl='12'>
-                                {/* <Row> */}
-                                    <Link to="/category">Categoria</Link>
-                                    {/* <Col xl="1"> */}
-                                        <Link to="/category">Leiloar</Link>
-                                    {/* </Col> */}
-                                    {/* <Col xl="1"> */}
-                                        <Link to="/category">Quem Somos</Link>
-                                    {/* </Col> */}
-                                {/* </Row> */}
-
-                                <LoginItem/>
-
-                            </Row>
-                
-              {/* </Col> */}
+  const [collapsed, setCollapsed] = useState(true);
+  const toggle = () => setCollapsed(!collapsed);
+  const components = props.components;
 
 
-                               
+  const pesquisa = (
+    // <Col xl="7">
+        <InputGroup style = {{paddingRight:'70px', paddingLeft:'70px', paddingTop:'16px', paddingBottom:'16px', maxWidth: '700px'}}>
+                <Input placeholder="Digite o nome do produto" />
+                <InputGroupAddon addonType="append">
+                <Button><span className="fa fa-search form-control-feedback"></span></Button>
+            </InputGroupAddon>
+        </InputGroup>
+    // </Col>
 
-//                         </Nav>);                
+  );
+
+  const componentes = (<Collapse>
+        <Link className="item_topbar"to="/category">Leiloar</Link>
+    </Collapse>);
+                                        
 
   return (
-      <Navbar color="light" className="topbar" light expand="md" style={{flexWrap:'initial', display:'flex'}}>
-                <Link to="/"><img src={logo} className="ImgLogo" width="100" alt="Logo"/></Link>
-
-                <ItemDropdown components={componentes}/>
-
-                <Col xl="4">
-                    <InputGroup>
-                            <Input placeholder="Digite o nome do produto" />
-                            <InputGroupAddon addonType="append">
-                            <Button><span className="fa fa-search form-control-feedback"></span></Button>
-                        </InputGroupAddon>
-                    </InputGroup>
-                </Col>
-
-                <Col style={{justifyContent: 'end'}}>
-                    <Row>
-                        <Link className="item_topbar"to="/category">Categoria</Link>
-                        <LoginItem/>
-                    </Row>
-                    <Row>
-                        <Link className="item_topbar"to="/category">Leiloar</Link>
-                        <Link className="item_topbar"to="/category">Quem Somos?</Link>
-                    </Row>
-                </Col>
-                
-
-                {/* <Col xl='1'>
-                
-
-                </Col>
-
-              <Col xl="4">
-                  <Row>
-                  <input type="text" className="form-control texto-pesquisa" placeholder="Digite o nome do produto"></input>
-                  </Row>
-              </Col>
-
-              <Col xl='6'>
-                <ItemToggle components={componentes}/>
-              </Col> */}
-
+      <Navbar color="light" className="topbar" light expand="md" style={{display:'flex'}}>
+          <Link to="/"><img src={logo} className="ImgLogo" width="100" alt="Logo"/></Link>
+            <ItemDropdown className="mr-auto" components={componentes}/>
+            <NavbarToggler onClick={toggle} className="mr-2" />
+          <Collapse isOpen={!collapsed} navbar>
+          {pesquisa}
+            <Nav className="mr-auto" >
+                <Link className="item_topbar"to="/category">Leiloar</Link>
+                <Link className="item_topbar"to="/category">Quem Somos?</Link>
+            </Nav>
+            <LoginItem/>
+          </Collapse>
               
       </Navbar>
   );

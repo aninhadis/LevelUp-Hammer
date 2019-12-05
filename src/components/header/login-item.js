@@ -7,7 +7,7 @@ const LoginItem = (props) => {
     const components = props.components;
   
     return (
-        <ul className="nav navbar-nav flex-row justify-content-end ml-auto">
+        <ul className="nav navbar-nav ">
             <li className="dropdown order-1">
                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" className="btn btn-outline-secondary dropdown-toggle">Login <span className="caret"></span></button>
                 <ul className="dropdown-menu dropdown-menu-right mt-2">

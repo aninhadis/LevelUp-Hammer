@@ -3,8 +3,8 @@
 }
 
 .ImgLogo{
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 }
 
 Link{
@@ -12,9 +12,20 @@ Link{
 }
 
 .item_topbar{
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    margin-right: 10px;
     color: black;
     font-size: large;
     font-weight: bolder;
-    justify-content: end;
+    /* justify-content: space-between; */
+}
+
+.colSeparada{
+    /* background-color: yellow; */
+    /* display: flex;
+    float:  left;
+    align-content: flex-start; */
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
 }
