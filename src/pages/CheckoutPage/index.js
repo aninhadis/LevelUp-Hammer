@@ -17,15 +17,6 @@ export class CheckoutPage extends Component {
 
         const {name, price} = descricaoStore.getState();
 
-
-        const filtro = (title, item) => {
-            categoriaStore.dispatch({
-                type: add_categoria,
-                busca: title,
-                item: item
-            });
-        }
-
         let cards = produtos_item.map( (produto, index) => <ItemCategoria key={index} produto={produto}/> ).slice(0,3);
 
         return (

@@ -4,7 +4,6 @@ import StarRatingComponent from 'react-star-rating-component';
 import {Link} from 'react-router-dom';
 import { descricaoStore, add_produto } from "../../store";
 import './item-categoria.css'
-import noImage from '../../assets/no-image.jpg';
 
 const ItemCategoria = (props) => {
 
@@ -14,24 +13,6 @@ const ItemCategoria = (props) => {
     comments.forEach(comentario => {
         rating = rating + comentario.rating;
     });
-
-    const checkImage = (imageSrc, good, bad) => {
-        var img = new Image();
-        img.onload = good; 
-        img.onerror = bad;
-        img.src = imageSrc;
-    }
-    
-    checkImage(`${image}?${id}`, 
-    ()=>{ 
-        console.log("good", `${image}?${id}`);
-        urlImage = `${image}?${id}`;
-    }, 
-    ()=>{ 
-        console.log("bad", noImage); 
-        urlImage = noImage;
-    } );
-
 
     const chamaDescricao = () => {
         descricaoStore.dispatch({

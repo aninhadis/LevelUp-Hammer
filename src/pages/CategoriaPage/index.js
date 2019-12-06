@@ -38,19 +38,6 @@ export class CategoriaPage extends Component {
         }
 
         var cards = produtos_item.map( (produto, index) => <ItemCategoria key={index} produto={produto}/> ).slice(0,20);
-
-
-
-
-
-        // const cards = store.getState().slice(0, 5).map( produto => <ItemCategoria produto={produto}/> );
-
-
-
-    
-
-
-
         return (
             <React.Fragment>
                 

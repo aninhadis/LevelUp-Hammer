@@ -1,5 +1,4 @@
-#checkout-button{
-    margin: 5px;
+#register-button{
     padding: 10px;
     width: 100%;
     border-radius: 15px;
@@ -9,8 +8,8 @@
     border-color:#ff6e40;
     font-weight: bolder;
     font-size: x-large;
-
 }
-#checkout-button:hover{
+
+#register-button:hover{
     background-color: var(--color-charcoal);
 }

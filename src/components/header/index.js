@@ -32,7 +32,7 @@ const Header = (props) => {
   );
 
   const componentes = (<Collapse>
-        <Link className="item_topbar"to="/category">Leiloar</Link>
+        <Link className="item_topbar"to="/register">Cadastro</Link>
     </Collapse>);
                                         
 
