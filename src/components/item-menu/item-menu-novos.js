@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardImg, CardTitle, CardSubtitle, CardBody, Col} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import { descricaoStore, add_produto } from "../../store";
+import { descricaoStore, add_produto, clicadosStore} from "../../store";
 import './item-menu.css';
 
 const ItemMenuNovo = (props) => {
@@ -10,6 +10,10 @@ const ItemMenuNovo = (props) => {
 
     const chamaDescricao = () => {
         descricaoStore.dispatch({
+            type: add_produto,
+            produto: props.produto
+        });
+        clicadosStore.dispatch({
             type: add_produto,
             produto: props.produto
         });

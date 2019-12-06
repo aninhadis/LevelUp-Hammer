@@ -1,32 +1,35 @@
 import React from 'react';
 import { Nav } from 'reactstrap';
 import SidebarItem from './sidebar-item';
+import {store} from '../../store';
+
 import './sidebar.css';
 
 const Sidebar = (props) => {
     //const [isOpen, setIsXOpen] = useState(false);
     //const toggle = () => setIsXOpen(!isOpen);
 
-    const item = [
-        {id: 1, title: 'color', itens: ["aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral",
-        "cornflowerblue", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid",
-        "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue",
-        "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "grey", "green", "greenyellow", "honeydew", "hotpink",
-        "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow",
-        "lightgrey", "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen",
-        "magenta", "maroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise",
-        "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid",
-        "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown",
-        "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue","tan", "teal", 
-        "thistle", "tomato", "turquoise","violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen", "sky blue", "mint green"]},
-        {id: 2, title: 'category', itens: ['Automotive', 'Baby', 'Beauty', 'Books', 'Clothing', 'Computers', 'Eletronics', 'Games', 'Garden', 'Grocery', 'Health', 'Home', 'Industrial', 'Jewelery', 'Kids', 'Movies', 'Music', 'Outdoors', 'Shoes', 'Sports', 'Tools', 'Toys']},
-        {id: 3, title: 'rating', itens: [1,2,3,4,5]},
-        {id: 4, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
-        {id: 5, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
-        {id: 6, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
-        {id: 7, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
-        {id: 8, title: 'categoria3', itens: ['item1', 'item2', 'item3']}
 
+    const distinct = (value, index, self) => {
+      return self.indexOf(value) === index;
+    }
+    const colors = store.getState().map(produto => produto['color']).filter(distinct).sort();
+    const category = store.getState().map(produto => produto['category']).filter(distinct).sort();
+    const brand = store.getState().map(produto => produto['brand']).filter(distinct).slice(0,15).sort();
+    const currency = store.getState().map(produto => produto['currency']).filter(distinct).slice(0,15).sort();
+
+    
+
+
+
+    const item = [
+        {id: 1, title: 'color', itens: colors},
+        {id: 2, title: 'category', itens: category},
+        {id: 3, title: 'rating', itens: [1,2,3,4,5]},
+        {id: 4, title: 'brand', itens: brand},
+        {id: 5, title: 'currency', itens: currency}
+        // {id: 2, title: 'category', itens: ['Automotive', 'Baby', 'Beauty', 'Books', 'Clothing', 'Computers', 'Eletronics', 'Games', 'Garden', 'Grocery', 'Health', 'Home', 'Industrial', 'Jewelery', 'Kids', 'Movies', 'Music', 'Outdoors', 'Shoes', 'Sports', 'Tools', 'Toys']},
+        // {id: 3, title: 'rating', itens: [1,2,3,4,5]},
     ];
 
     const navStyles = {

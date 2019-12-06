@@ -33,6 +33,7 @@ class App extends React.Component{
     };  
   }
 
+
   componentDidMount() {
     store.subscribe(()=>{
       this.setState({
@@ -44,6 +45,7 @@ class App extends React.Component{
         return resposta.data[key];
       })
       //this.setState({produtos: data[0]});
+      console.log(data[0]);
       store.dispatch({
         type: add_data,
         produtos: data[0]

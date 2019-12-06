@@ -12,11 +12,18 @@ const SidebarItem = (props) => {
     const [isOpen, setIsXOpen] = useState(false);
     const toggle = () => setIsXOpen(!isOpen);
 
+
     const { title, itens } = props.item;
     const { navItem, navLink } = props.variations
 
     const subitens = itens.map(item => 
-        <Card style={{backgroundColor:'#00000000'}}><NavItem  onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{(title != "rating")? item : <StarRatingComponent starCount={5} editing={false}  value={item}/>}<Link to="/category" onClick={props.filtro.bind(props, title, item)} className="stretched-link"></Link></NavItem></Card>
+        <Card style={{backgroundColor:'#00000000'}}>
+            <NavItem  onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>
+                {(title != "rating")? <span style={{color:'white'}}>{item} </span>
+                : <StarRatingComponent starCount={5} editing={false}  value={item}/>}
+                <Link to="/category" onClick={props.filtro.bind(props, title, item)} className="stretched-link"></Link>
+            </NavItem>
+        </Card>
     );
 
     return (

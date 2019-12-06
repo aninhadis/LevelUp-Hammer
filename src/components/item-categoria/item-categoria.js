@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardTitle, CardSubtitle, CardBody, Col } from 'reactstrap';
 import StarRatingComponent from 'react-star-rating-component';
 import {Link} from 'react-router-dom';
-import { descricaoStore, add_produto } from "../../store";
+import { descricaoStore, add_produto, clicadosStore } from "../../store";
 import './item-categoria.css'
 
 const ItemCategoria = (props) => {
@@ -16,6 +16,10 @@ const ItemCategoria = (props) => {
 
     const chamaDescricao = () => {
         descricaoStore.dispatch({
+            type: add_produto,
+            produto: props.produto
+        });
+        clicadosStore.dispatch({
             type: add_produto,
             produto: props.produto
         });

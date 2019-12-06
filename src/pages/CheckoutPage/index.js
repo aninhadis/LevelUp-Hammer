@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, CardDeck, Input } from 'reactstrap';
 import ItemCategoria from '../../components/item-categoria/item-categoria';
 import {Link} from 'react-router-dom';
-import {store, categoriaStore, add_categoria, descricaoStore} from '../../store';
+import {store, categoriaStore, clicadosStore, descricaoStore} from '../../store';
 
 import './checkout.css';
 
@@ -11,6 +11,14 @@ import './checkout.css';
 export class CheckoutPage extends Component {
 
     render() {
+
+        // var cards = <span></span>;
+        // const clicados = clicadosStore.getState();
+        // if( clicados!= undefined ){
+
+        // }
+
+
 
         const m_filtro = categoriaStore.getState();
         var produtos_item = store.getState().filter( produto => produto[m_filtro['busca']] === m_filtro['item']);

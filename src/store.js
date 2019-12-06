@@ -28,6 +28,15 @@ function categoria(state = [], action ={}){
     }
 }
 
+function clicados(state = [], action ={}){
+    switch (action.type) {
+        case add_produto:
+            return [... state, action.item];
+        default:
+            return state;
+    }
+}
+
 export const add_data = 'ADD_DATA';
 export const add_produto = 'PRODUTO';
 export const add_categoria = 'CATEGORIA';
@@ -35,5 +44,7 @@ export const add_categoria = 'CATEGORIA';
 export const store = createStore(data);
 export const descricaoStore = createStore(descricao);
 export const categoriaStore = createStore(categoria);
+export const clicadosStore = createStore(clicados);
+
 
 

@@ -27,7 +27,7 @@ class DescricaoPage extends Component {
                     <h4><span className="orange-text">Cor:</span> {color}</h4>
                     <h4><span className="orange-text">Marca:</span> {brand}</h4>
                     <h4><span className="orange-text">Categoria:</span> {category}</h4>
-                    <button id="lance-button"><Link to="/checkout" style={{color:"#E4E8EA"}}>Dê seu Lance</Link></button>
+                    <Link to="/checkout" style={{color:"#E4E8EA"}}><button id="lance-button">Dê seu Lance</button></Link>
                     </Col>
                 </Row>
                 

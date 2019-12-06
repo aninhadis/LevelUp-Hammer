@@ -24,10 +24,11 @@ const ItemMenuOferta = (props) => {
                         <Row style={{justifyContent: "space-around", alignItems: "center"}}>
                             <CardTitle id="oferta-name">{name}</CardTitle>
                             <CardTitle id="oferta-price"><span style={{color: "#ff6f00", fontWeight: "bold"}}>Lance atual:</span> {price}</CardTitle>
-                            <Button id="oferta-button">Dê seu lance</Button>          
+                            <Card id="oferta-button"><Button id="oferta-button"><Link to="/checkout" style={{color:"#E4E8EA"}} className="stretched-link"></Link>Dê seu lance</Button></Card>
+                            {/* <button id="oferta-button">Dê seu Lance</button></Link>           */}
                         </Row>
                         
-                        <Link to="/description" onClick={chamaDescricao} className="stretched-link"></Link>
+                        {/* <Link to="/description" onClick={chamaDescricao} className="stretched-link"></Link> */}
                     </CardBody>
             </Card>
         </Col>
