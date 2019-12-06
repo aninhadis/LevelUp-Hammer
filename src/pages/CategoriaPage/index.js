@@ -28,8 +28,8 @@ export class CategoriaPage extends Component {
             console.log(m_filtro['busca']);
             console.log(m_filtro['item']);
 
-            txt_filtro = <h1 style={{color:'white'}}>Filtro:  {m_filtro['busca'] } : {m_filtro['item']}</h1>
-            if(m_filtro['busca'] == 'stars'){
+            txt_filtro = <h1>Filtro:  {m_filtro['busca'] } : {m_filtro['item']}</h1>
+            if(m_filtro['busca'] == 'rating'){
                 produtos_item = store.getState().filter( item => {
                     var rating = 0;
                     item.comments.forEach(comentario => {
@@ -65,31 +65,18 @@ export class CategoriaPage extends Component {
             console.log(item);
         }
 
-        var cards = produtos_item.map( produto => <ItemCategoria produto={produto}/> ).slice(0,20);
-
-
-
-
-
-        // const cards = store.getState().slice(0, 5).map( produto => <ItemCategoria produto={produto}/> );
-
-
-
-    
-
-
-
+        var cards = produtos_item.map( (produto, index) => <ItemCategoria key={index} produto={produto}/> ).slice(0,20);
         return (
             <React.Fragment>
                 
                 <Container className="background-cards" fluid={true}>
-                    {txt_filtro}
                     <Row>
                         <Col xl="2">
                             <Sidebar filtro={filtro}/>
                         </Col>
                         {/* {produtos} */}
                         <Col xl="10">
+                            {txt_filtro}
                             <CardDeck >
                                 {cards}
                             </CardDeck>

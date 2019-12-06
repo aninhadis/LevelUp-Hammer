@@ -2,14 +2,12 @@
 #leilao{
     text-align: left;
     align-items: center ;
-    background-color:#ffecdd;
+    background-color: var(--color-light-gray);
+    color: var(--color-platinum);
 }
 #imagem-menu-oferta{
     max-width: 700px;
     max-height: 600px;
-}
-#oferta-name{
-    margin-right: 200px;
 }
 #oferta-price{
     align-items: center;
@@ -18,8 +16,11 @@
     width: 100%;
     border-radius: 15px;
     border-width: 1.5px;
-    background-color:#fddec6;
-    color: black;
+    background-color:var(--color-primary);
+    color: var(--color-platinum);
     border-color:#ff6e40;
     font-weight: bolder;
+}
+#oferta-button:hover{
+    background-color: var(--color-charcoal);
 }

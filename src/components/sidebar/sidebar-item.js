@@ -16,7 +16,7 @@ const SidebarItem = (props) => {
     const { navItem, navLink } = props.variations
 
     const subitens = itens.map(item => 
-        <Card style={{backgroundColor:'#00000000'}}><NavItem  onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{(title != "stars")? item : <StarRatingComponent starCount={5} editing={false}  value={item}/>}<Link to="/category" onClick={props.filtro.bind(props, title, item)} className="stretched-link"></Link></NavItem></Card>
+        <Card style={{backgroundColor:'#00000000'}}><NavItem  onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{(title != "rating")? item : <StarRatingComponent starCount={5} editing={false}  value={item}/>}<Link to="/category" onClick={props.filtro.bind(props, title, item)} className="stretched-link"></Link></NavItem></Card>
     );
 
     return (

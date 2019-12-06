@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { descricaoStore, add_produto } from "../../store";
 import './item-menu.css';
 
-const ItemMenuNovo = (props) => {
+const ItemMenuProcurados = (props) => {
 
     const {id, name, image, price } = props.produto;
 
@@ -16,7 +16,7 @@ const ItemMenuNovo = (props) => {
     }
    
     return (
-        <Col xl='6'>
+        <Col xl='4'>
             <Card body outline color="danger">
                 <CardImg top width="100%" src={image+'?'+id} alt="Card image cap" />
                     <CardBody>
@@ -29,7 +29,7 @@ const ItemMenuNovo = (props) => {
         
 
     );
-
+    
 }
 
-export default ItemMenuNovo;
+export default ItemMenuProcurados;

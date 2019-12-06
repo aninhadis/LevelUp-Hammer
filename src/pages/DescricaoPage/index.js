@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {descricaoStore} from '../../store';
 import {Row,Col} from 'reactstrap';
+import {Link} from 'react-router-dom'
 import './descricao.css'
 
 
@@ -9,10 +10,7 @@ class DescricaoPage extends Component {
 
     render() {
 
-        const {brand, category, color, currency, image, name, price, comments} = descricaoStore.getState();
-
-
-        console.log(descricaoStore.getState());
+        const {brand, category, color, currency, image, name, price} = descricaoStore.getState();
 
         return (
 
@@ -20,22 +18,18 @@ class DescricaoPage extends Component {
             <React.Fragment>
                 <Row  style={{alignItems: "center", justifyContent: "center"}} className="produto">
                     <Col id="align-col1" xl='7'>
-                    <h1 id="name-item" className="orange-text">{name}</h1>
-                    <img id="image-item" src={image}/>
+                    <h1 id="name-item" className="name-text">{name}</h1>
+                    <img id="image-item" alt="imagem" src={image}/>
                     </Col>
                     <Col id="align-col2" xl='5'>
-                    <h2><span className="orange-text">Valor atual:</span> {price}</h2>
-                    <h2><span className="orange-text">Moeda:</span> {currency}</h2>
-                    <h2><span className="orange-text">Cor:</span> {color}</h2>
-                    <h2><span className="orange-text">Marca:</span> {brand}</h2>
-                    <h2><span className="orange-text">Categoria:</span> {category}</h2>
-                    <button id="lance-button">Dê seu Lance</button>
-                    <button id="lance-button">Aumentar Lance</button>
+                    <h4><span className="orange-text">Valor atual:</span> {price}</h4>
+                    <h4><span className="orange-text">Moeda:</span> {currency}</h4>
+                    <h4><span className="orange-text">Cor:</span> {color}</h4>
+                    <h4><span className="orange-text">Marca:</span> {brand}</h4>
+                    <h4><span className="orange-text">Categoria:</span> {category}</h4>
+                    <button id="lance-button"><Link to="/checkout" style={{color:"#E4E8EA"}}>Dê seu Lance</Link></button>
                     </Col>
                 </Row>
-                <div className="comentario" style={{background:"#6d6d6d", color: "#FAFBF9"}}>
-                    <h1 style={{marginBottom: "0"}}>Comentários:</h1>
-                </div>
                 
 
             </React.Fragment>

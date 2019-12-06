@@ -1,16 +1,12 @@
-.App{
-  /* background-color: #282c34;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white; */
-  /* margin-top: 120px;  */
-} 
+
 :root {
-  --color-primary-orange: #ff6f00;
+  --color-primary: #ff6f00;
+  --color-light-gray: #78909C;
+  --color-deep-space-sparkle: #455A64;
+  --color-platinum: #E4E8EA;
+  --color-charcoal: #37474F;
+
+
   --color-light-orange: #ffa040;
   --color-dark-orange: #c43e00;
   --color-primary-gray: #424242;
@@ -26,7 +22,42 @@
 html, body{
   font-family: "Montserrat" !important;
   overflow-x: hidden;
-  background-color: var(--color-pattern-blue);
+  background-color: var(--color-platinum) !important;
+}
+
+.container{
+  padding-top: 40px;
+}
+
+.navbar.topbar{
+  background-color: var(--color-charcoal) !important;
+}
+
+.navbar.topbar a.item_topbar, .navbar.topbar .btn{
+  color: var(--color-platinum);
+}
+
+.navbar.topbar .item-image.btn{
+  background: var(--color-platinum);
+}
+
+.card.card-body{
+  background-color: var(--color-light-gray);
+  color: var(--color-platinum);
+  border-color: var(--color-primary) !important;
+  margin-bottom: 10px !important;
+  padding: 1rem;
+}
+
+h1{
+  text-align: center;
+  width: fit-content;
+  margin: 30px auto !important;
+  text-transform: uppercase;
+  font-size: 2rem !important;
+  border-top: 2px solid #FF3D00;
+  border-bottom: 2px solid #FF3D00;
+  padding: 5px 0px;
 }
 
 .App .secao-leiloes {
@@ -53,32 +84,6 @@ html, body{
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-/* 
-div>h5,div>h1 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-} */
-
 .carregando{
   display: flex;
   flex-direction: column;

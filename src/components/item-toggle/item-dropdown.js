@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Row } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import categoriaImg from '../../assets/category-icon.png';
 import './item.css'
 import {categoriaStore, add_categoria} from '../../store';
@@ -21,16 +21,16 @@ const ItemDropdown = (props) => {
 
 
   const categorias = ['Automotive', 'Baby', 'Beauty', 'Books', 'Clothing', 'Computers', 'Eletronics', 'Games', 'Garden', 'Grocery', 'Health', 'Home', 'Industrial', 'Jewelery', 'Kids', 'Movies', 'Music', 'Outdoors', 'Shoes', 'Sports', 'Tools', 'Toys'];
-  const itensDropdown = categorias.map(item => <DropdownItem><Link to="/category" onClick={gotoCategoria} >{item}</Link></DropdownItem>);
+  const itensDropdown = categorias.map((item, index) => <DropdownItem key={index}><Link to="/category" onClick={gotoCategoria} >{item}</Link></DropdownItem>);
  
   
 const [dropdownOpen, setDropdownOpen] = useState(false);
 const toggle = () => setDropdownOpen(prevState => !prevState);
-const components = props.components;
+//const components = props.components;
   
     return (
       <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-        <DropdownToggle style={{display:'flex', backgroundColor:"rgb(201, 198, 194)", marginLeft:"20px"}}className="item-image" caret={false}>
+        <DropdownToggle style={{display:'flex', backgroundColor:"rgb(201, 198, 194)", marginLeft:"20px"}} className="item-image" caret={false}>
           <img className="imagem" src={categoriaImg} width="100" alt="Logo"/>
           <span className="item-text">Categorias</span>
         </DropdownToggle>

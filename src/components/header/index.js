@@ -5,21 +5,10 @@ import {
     InputGroup, InputGroupAddon, Button, Input,
   Collapse,
   Navbar,
-  Container,
   NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Row,
-  Col
+  Nav
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
-import ItemToggle from '../item-toggle';
 import LoginItem from './login-item';
 import ItemDropdown from '../item-toggle/item-dropdown';
 import './header.css';
@@ -58,7 +47,7 @@ const Header = (props) => {
   );
 
   const componentes = (<Collapse>
-        <Link className="item_topbar"to="/category">Leiloar</Link>
+        <Link className="item_topbar"to="/register">Cadastro</Link>
     </Collapse>);
                                         
 
@@ -70,8 +59,7 @@ const Header = (props) => {
           <Collapse isOpen={!collapsed} navbar>
           {pesquisa}
             <Nav className="mr-auto" >
-                <Link className="item_topbar"to="/category">Leiloar</Link>
-                <Link className="item_topbar"to="/category">Quem Somos?</Link>
+                <Link className="item_topbar"to="/register">Cadastrar</Link>
             </Nav>
             <LoginItem/>
           </Collapse>

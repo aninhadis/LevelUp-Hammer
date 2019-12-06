@@ -1,0 +1,15 @@
+#register-button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border-width: 1.5px;
+    background-color:var(--color-primary);
+    color: var(--color-platinum);
+    border-color:#ff6e40;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+#register-button:hover{
+    background-color: var(--color-charcoal);
+}

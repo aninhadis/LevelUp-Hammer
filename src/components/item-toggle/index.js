@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { Collapse, NavbarToggler, Nav, Row } from 'reactstrap';
+import React from 'react';
+import { Row } from 'reactstrap';
 
-const ItemToggle = (props) => {
-    const [collapsed, setCollapsed] = useState(true);
-    const toggle = () => setCollapsed(!collapsed);
-    const components = props.components;
-  
+const ItemToggle = () => {
     return (
       <Row>
           

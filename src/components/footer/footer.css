@@ -1,0 +1,12 @@
+.Footer{
+    margin-top: 45px;
+    background-color: var(--color-charcoal);
+    color: var(--color-platinum);
+    padding: 5px;
+}
+#col1-content{
+    text-align: left;
+}
+#col2-content{
+    text-align: right;
+}
