@@ -20,7 +20,36 @@ export class CategoriaPage extends Component {
         // const produtos_item = store.getState().filter(produto => produto.id < 20);
 
         const m_filtro = categoriaStore.getState();
-        var produtos_item = store.getState().filter( produto => produto[m_filtro['busca']] === m_filtro['item']);
+        var txt_filtro = <span></span>;
+        var produtos_item;
+
+        if(m_filtro['busca'] != undefined || m_filtro['item'] != undefined){
+            console.log('filtro:');
+            console.log(m_filtro['busca']);
+            console.log(m_filtro['item']);
+
+            txt_filtro = <h1 style={{color:'white'}}>Filtro:  {m_filtro['busca'] } : {m_filtro['item']}</h1>
+            if(m_filtro['busca'] == 'stars'){
+                produtos_item = store.getState().filter( item => {
+                    var rating = 0;
+                    item.comments.forEach(comentario => {
+                        rating = rating + comentario.rating;
+                    });
+                    const len = item.comments === undefined ? 1 : item.comments.length;
+                    console.log('Valor:' + rating/len)
+                    return (rating/len == m_filtro['item']);
+                });
+            }else{
+                if(m_filtro['busca'] == 'name'){
+                    produtos_item = store.getState().filter( produto => {
+                        return produto[m_filtro['busca']].includes(m_filtro['item']);
+                    });
+                }
+                else produtos_item = store.getState().filter( produto => produto[m_filtro['busca']] == m_filtro['item']);
+            }
+        }else{
+            produtos_item = store.getState();
+        }
 
 
 
@@ -32,7 +61,6 @@ export class CategoriaPage extends Component {
                 busca: title,
                 item: item
             });
-            console.log(produtos_item);
             console.log(title);
             console.log(item);
         }
@@ -55,14 +83,13 @@ export class CategoriaPage extends Component {
             <React.Fragment>
                 
                 <Container className="background-cards" fluid={true}>
-                    
+                    {txt_filtro}
                     <Row>
                         <Col xl="2">
                             <Sidebar filtro={filtro}/>
                         </Col>
                         {/* {produtos} */}
                         <Col xl="10">
-                            <h1 style={{color:'white'}}>Filtro:  {m_filtro['busca'] } : {m_filtro['item']}</h1>
                             <CardDeck >
                                 {cards}
                             </CardDeck>

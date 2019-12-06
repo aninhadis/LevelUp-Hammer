@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {store, categoriaStore, add_categoria} from '../../store';
+
 import {
     InputGroup, InputGroupAddon, Button, Input,
   Collapse,
@@ -28,18 +30,31 @@ const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);
   const toggle = () => setCollapsed(!collapsed);
   const components = props.components;
+  var texto = '';
+
+  const onChangeInput = (e) => {
+    texto = e.target.value
+    console.log(texto);
+  }
+
+
+
+  const filtro = () => {
+    categoriaStore.dispatch({
+        type: add_categoria,
+        busca: 'name',
+        item: texto
+    });
+}
 
 
   const pesquisa = (
-    // <Col xl="7">
         <InputGroup style = {{paddingRight:'70px', paddingLeft:'70px', paddingTop:'16px', paddingBottom:'16px', maxWidth: '700px'}}>
-                <Input placeholder="Digite o nome do produto" />
+                <Input placeholder="Digite o nome do produto" onChange={onChangeInput}/>
                 <InputGroupAddon addonType="append">
-                <Button><span className="fa fa-search form-control-feedback"></span></Button>
+                <Link to='/category'><Button onClick={filtro}><span className="fa fa-search form-control-feedback"></span></Button></Link>
             </InputGroupAddon>
         </InputGroup>
-    // </Col>
-
   );
 
   const componentes = (<Collapse>

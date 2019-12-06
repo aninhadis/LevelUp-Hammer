@@ -20,7 +20,7 @@ const Sidebar = (props) => {
         "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue","tan", "teal", 
         "thistle", "tomato", "turquoise","violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen", "sky blue", "mint green"]},
         {id: 2, title: 'category', itens: ['Automotive', 'Baby', 'Beauty', 'Books', 'Clothing', 'Computers', 'Eletronics', 'Games', 'Garden', 'Grocery', 'Health', 'Home', 'Industrial', 'Jewelery', 'Kids', 'Movies', 'Music', 'Outdoors', 'Shoes', 'Sports', 'Tools', 'Toys']},
-        {id: 3, title: 'avaliação', itens: ['1', '2', '3']},
+        {id: 3, title: 'stars', itens: [1,2,3,4,5]},
         {id: 4, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
         {id: 5, title: 'categoria3', itens: ['item1', 'item2', 'item3']},
         {id: 6, title: 'categoria3', itens: ['item1', 'item2', 'item3']},

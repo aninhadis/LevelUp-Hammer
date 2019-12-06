@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Nav, NavItem, NavLink, Collapse } from 'reactstrap';
+import { Card, NavItem, NavLink, Collapse } from 'reactstrap';
 import './sidebar.css';
+import StarRatingComponent from 'react-star-rating-component';
+
 import {Link} from 'react-router-dom';
 
 
@@ -13,7 +15,9 @@ const SidebarItem = (props) => {
     const { title, itens } = props.item;
     const { navItem, navLink } = props.variations
 
-    const subitens = itens.map(item => <Link to="/category"><NavItem onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{item}</NavItem></Link> );
+    const subitens = itens.map(item => 
+        <Card style={{backgroundColor:'#00000000'}}><NavItem  onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{(title != "stars")? item : <StarRatingComponent starCount={5} editing={false}  value={item}/>}<Link to="/category" onClick={props.filtro.bind(props, title, item)} className="stretched-link"></Link></NavItem></Card>
+    );
 
     return (
         <div>
