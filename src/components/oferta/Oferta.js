@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom';
 import './Oferta.css';
 
@@ -8,9 +8,9 @@ function Oferta() {
       <div className="card" style={ { width: "18rem" } }>
         <img src="img/logo.jpg" className="card-img-top" alt="..."/>
         <div className="card-body">
-          <a className="lance">Lance</a>
+          <a href="#lance" className="lance">Lance</a>
           <span className="nome-produto">Nome do produto</span>
-          <a href="#" className="btn btn-primary">Dê seu lance</a>
+          <a href="#lance" className="btn btn-primary">Dê seu lance</a>
         </div>
       </div>
     </Link>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Nav, NavItem, NavLink, Collapse } from 'reactstrap';
+import { NavItem, NavLink, Collapse } from 'reactstrap';
 import './sidebar.css';
+import {Link} from 'react-router-dom';
+
 
 
 
@@ -11,7 +13,7 @@ const SidebarItem = (props) => {
     const { title, itens } = props.item;
     const { navItem, navLink } = props.variations
 
-    const subitens = itens.map(item => <NavItem style={{paddingLeft:'25px'}}>{item}</NavItem> );
+    const subitens = itens.map((item, index) => <Link key={index} to="/category"><div onClick={props.filtro.bind(props, title, item)} style={{paddingLeft:'25px', cursor:'pointer'}}>{item}</div></Link> );
 
     return (
         <div>

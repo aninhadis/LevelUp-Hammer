@@ -12,7 +12,11 @@
 }
 
 .imagem{
-    height: 45px;
-    width: 45px;
+    height: 30px;
+    width: 30px;
 }
 
+.item-text{
+    font-size: small;
+    color: black;
+}

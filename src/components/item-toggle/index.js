@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
-import { Collapse, NavbarToggler, Nav } from 'reactstrap';
+import React from 'react';
+import { Row } from 'reactstrap';
 
-const ItemToggle = (props) => {
-    const [collapsed, setCollapsed] = useState(true);
-    const toggle = () => setCollapsed(!collapsed);
-    const components = props.components;
-  
+const ItemToggle = () => {
     return (
-      <div>
-          <NavbarToggler onClick={toggle} className="mr-2" />
-          <Collapse isOpen={!collapsed} navbar>
-            <Nav navbar>
-              {components}
-            </Nav>
-          </Collapse>
-      </div>
+      <Row>
+          
+      </Row>
     );
   }
   

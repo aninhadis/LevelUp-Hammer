@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Oferta from '../../components/oferta/Oferta'
 import {store} from '../../store';
 import './homepage.css'
 import { CardDeck, Row, Col} from 'reactstrap';
 import ItemMenuNovo from '../../components/item-menu/item-menu-novos';
-import logo from '../../assets/logo.png';
 import ItemMenuOferta from '../../components/item-menu/item-menu-oferta';
 import ItemMenuProcurados from '../../components/item-menu/item-menu-procurados';
 
@@ -35,42 +33,12 @@ export class HomePage extends Component {
               </CardDeck>
             </Col>
             <div >
-              <h1 id="sessao-procurados"> Leiloes mais procurados </h1>
+              <h1 id="sessao-procurados"> Leilões mais procurados </h1>
               <CardDeck>
                 {cardsProcurados}
               </CardDeck>
             </div>
           </Row>
-          <h1>Próximo passo</h1>
-              
-              
-
-            {/* <div className="container">
-              <section className="secao-leiloes">
-                <div className="container-destaque">
-                  <Oferta/>
-                </div>
-                <div className="container-novos-leiloes">
-                  <h2>Novos Leilões</h2>
-                  <div className="container-produtos produtos-novos">
-                    <div>100</div>
-                    <div>101</div>
-                    <div>102</div>
-                    <div>103</div>
-                  </div>
-                </div>
-              </section>
-              <React.Fragment>
-                <Oferta/>
-              </React.Fragment>
-            </div> */}
-
-
-
-
-
-                
-
             </React.Fragment>
         )
     }

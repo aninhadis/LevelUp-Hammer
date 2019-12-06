@@ -3,8 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 
-import { Spinner, Col } from 'reactstrap';
-import logo from './assets/logo.png';
+import { Spinner } from 'reactstrap';
 
 
 
@@ -18,6 +17,7 @@ import { store, add_data } from "./store";
 import DescricaoPage from './pages/DescricaoPage';
 import HomePage from './pages/HomePage';
 import CadastroPage from './pages/CadastroPage';
+import CheckoutPage from './pages/CheckoutPage';
 import Footer from './components/footer/footer';
 
 
@@ -61,7 +61,7 @@ class App extends React.Component{
         <div className="carregando">
           <h1>Espere, estamos atualizando nossos dados...</h1>
           <Spinner id="spinner" color="success" />
-          <img id="imagem_carregando"src={logo} width="100" alt="Logo"/>
+          {/* <img id="imagem_carregando"src={logo} width="100" alt="Logo"/> */}
           
         </div>
         
@@ -72,15 +72,16 @@ class App extends React.Component{
       <Router>
         <div className = "App" >
           <Header />
-          
-          {/* <Route path="/about" component={About} /> */}
-          <Route path="/category" component={CategoriaPage} />
-          <Route exact={true} path="/" component={HomePage} />
-          <Route path="/description" component={DescricaoPage} />
-          <Route path="/register" component={CadastroPage} />
-          {/* <Route path="/description" render={props =>(<CategoriaPage  produtos={this.state.produtos}/>)}/> */}
-          {/* <Route path="/category" component={t1} /> */}
-
+          <div className="container">
+            {/* <Route path="/about" component={About} /> */}
+            <Route path="/category" component={CategoriaPage} />
+            <Route path="/checkout" component={CheckoutPage} />
+            <Route exact={true} path="/" component={HomePage} />
+            <Route path="/description" component={DescricaoPage} />
+            <Route path="/register" component={CadastroPage} />
+            {/* <Route path="/description" render={props =>(<CategoriaPage  produtos={this.state.produtos}/>)}/> */}
+            {/* <Route path="/category" component={t1} /> */}
+          </div>
           <Footer/>
         </div> 
       </Router>
